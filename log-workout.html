@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/countup.js"></script>
+</head>
+<!-- Similar structure to other pages, adjusting content accordingly -->
+<body>
+
+    <header>
+        <h1>Fitness Tracker</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="log-workout.html">Log Workout</a></li>
+            <li><a href="progress.html">Progress</a></li>
+            <li><a href="goals.html">Goals</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+
+        <h2>Log Your Workout</h2>
+<br>
+        <!-- Display progress information here -->
+        <section id="progressInfo">
+            <h3>Weekly Summary</h3>
+            <p>Total workouts this week: <span id="workoutsCount">0</span> </p>
+            <p>Total workout duration: <span id="durationCount">0</span> minutes</p>
+            <button id="upgradeButton">Upgrade</button>
+        </section>
+
+        <section id="monthlyTable">
+            <h3>Monthly Workout Summary</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Total Workouts</th>
+                        <th>Total Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>January</td>
+                        <td><span id="janWorkoutsCount">0</span></td>
+                        <td><span id="janDurationCount">0</span> minutes</td>
+                    </tr>
+                    <!-- Add more rows for each month as needed -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Chart container -->
+        <section id="chartContainer">
+            <canvas id="progressChart" width="400" height="200"></canvas>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Fitness Tracker</p>
+    </footer>
+
+    <script>
+        // Sample data for the counters
+        var workoutsCountData = 3;
+        var durationCountData = 120;
+
+        // Sample data for monthly table counters
+        var janWorkoutsCountData = 15;
+        var janDurationCountData = 600;
+
+        // Initialize CountUp instances
+        var workoutsCountUp = new CountUp('workoutsCount', 0, workoutsCountData, 0, 2);
+        var durationCountUp = new CountUp('durationCount', 0, durationCountData, 0, 2);
+        var janWorkoutsCountUp = new CountUp('janWorkoutsCount', 0, janWorkoutsCountData, 0, 2);
+        var janDurationCountUp = new CountUp('janDurationCount', 0, janDurationCountData, 0, 2);
+
+        // Trigger counting animations
+        workoutsCountUp.start();
+        durationCountUp.start();
+        janWorkoutsCountUp.start();
+        janDurationCountUp.start();
+
+        // Add event listener for the "Upgrade" button
+        var upgradeButton = document.getElementById('upgradeButton');
+        upgradeButton.addEventListener('click', function() {
+            // Implement upgrade logic here
+            alert('Upgrade button clicked!');
+        });
+    </script>
+
+    <script>
+        // Sample data for the counter
+        var workoutsCountData = 3;
+        var durationCountData = 120;
+
+        // Initialize countUp instances
+        var workoutsCountUp = new CountUp('workoutsCount', 0, workoutsCountData, 0, 2);
+        var durationCountUp = new CountUp('durationCount', 0, durationCountData, 0, 2);
+
+        // Trigger counting animation
+        workoutsCountUp.start();
+        durationCountUp.start();
+    </script>
+
+
+        <script>
+            // Sample data for the chart
+            var chartData = {
+                labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                datasets: [{
+                    label: 'Workout Duration (minutes)',
+                    data: [30, 45, 20, 15, 40],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            };
+
+            // Get the canvas element
+            var ctx = document.getElementById('progressChart').getContext('2d');
+
+            // Create the chart
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: chartData,
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        </script>
+</body>
+</html>
