@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Resume</title>
+    <title>Fitness Tracker</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <header>
         <h1>My Resume</h1>
     </header>
+
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -19,24 +21,41 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
+
     <main>
-        <section id="personalInfo">
-            <h2>Personal Information</h2>
-            <!-- Add personal information here -->
+
+        <section id="contactForm">
+            <h2 style="text-align: center;">Get in Touch</h2>
+
+            <div class="tip">
+                <form>
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <button type="button" onclick="alert('Message sent!')">Send Message</button>
+                </form>
+            </div>
+
         </section>
-        <section id="experience">
-            <h2>Work Experience</h2>
-            <!-- Add work experience details here -->
-        </section>
-        <section id="education">
-            <h2>Education</h2>
-            <!-- Add education details here -->
-        </section>
-        <section id="skills">
-            <h2>Skills</h2>
-            <!-- Add skills information here -->
-        </section>
+
+        <div class="tip">
+            <section id="contactInfo">
+                <h2>Contact Information</h2>
+                <p>If you have any questions or concerns, feel free to reach out to us:</p>
+                <p>Email: infoforfitness@fitnesstracker.com</p>
+                <p>Phone: (555) 123-4567</p>
+                <p>Address: 123 Fitness Street, Workout City</p>
+            </section>
+        </div>
+        
     </main>
+
     <footer>
         <p>&copy; 2024 My Resume</p>
     </footer>
