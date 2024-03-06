@@ -104,6 +104,26 @@ body {
   h2 {
     color: #333;
   }
+
+  .tip {
+    overflow: hidden; /* Clear the float to allow text to wrap around the image */
+}
+
+.featured-item img {
+    max-width: 100%;
+    height: auto;
+    float: left; /* Align images to the left */
+    margin-right: 20px; /* Add some margin for spacing */
+    border-radius: 8px; /* Add rounded corners for a square appearance */
+}
+
+.body-type img {
+    max-width: 100%;
+    height: auto;
+    float: left; /* Align images to the left */
+    margin-right: 20px; /* Add some margin for spacing */
+    border-radius: 8px; /* Add rounded corners for a square appearance */
+}
   
   footer {
     background-color: #333;
